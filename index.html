@@ -5,32 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <style>
-    button::before {
-content: "🔥";
+    body {
+        display: flex;
+        height: 100vh;
+      
+   background-color: #434982;
+   justify-content: center;
+   align-items: center; 
+   margin: 0em;
+   padding: 0;
+   overflow-y: hidden;
+   }
+   h1 {
+       font-family: privet, cursive;
+       font-size: 4em;
+       color: #01d28e;
+       text-shadow: 1px 1px #f6f078,
+       2px 2px #f6f078,
+       3px 3px #f6f078,
+       4px 4px #f6f078;
+   z-index: 100;}
+@font-face {
+    font-family: privet;
+    src: url("leckerli.ttf") format("opentype");
+}
+.flower-1 {
+    background-image: url('flower1.png');
+background-size: cover;
+background-position: center;
+position: absolute;
+top: -150px;
+}
+.flower-2 {
+    background-image: url('flower2.png');
+background-size: cover;
+background-position: center;
+position: absolute;
+top: -150px;
+}
+.flower-3 {
+    background-image: url('flower3.png');
+background-size: cover;
+background-position: center;
+position: absolute;
+top: -150px;
+}
+@keyframes falling {
+    to {
+        top: 100vh;
+        transform: rotate(720deg);
     }
-.container {
-    border: 2em solid blue;
-width: 16.3em;
-border-radius: 1em;
-margin: 1em;
-flex-direction: row;}
-input{
-    padding:1em;
 }
-button {
-    padding: 1em;
+div:nth-of-type(1) {
+    left: 11vw;
+    width: 116px;
+    height: 116px;
+    animation: falling 16s 2.72s linear infinite;
 }
-form {
-    display: flex;
+div:nth-of-type(2) {
+    left: 51vw;
+    width: 170px;
+    height: 170px;
+    animation: falling 10s 2.72s linear infinite;
 }
+div:nth-of-type(3) {
+    left: 68vw;
+    width: 150px;
+    height: 150px;
+    animation: falling 12s 2.72s linear infinite;
+}
+div:nth-of-type(4) {
+    left: 30vw;
+    width: 90px;
+    height:90px;
+    animation: falling 15s 2.72s linear infinite;
+}
+div:nth-of-type(5) {
+    left: 83vw;
+    width: 138px;
+    height: 138px;
+    animation: falling 19s 2.72s linear infinite;
+}
+div:nth-of-type(6) {
+    left: 38vw;
+    width: 125px;
+    height: 125px;
+    animation: falling 9s 2.72s linear infinite;
+}
+div:nth-of-type(7) {
+    left: 47vw;
+    width: 159px;
+    height: 159px;
+    animation: falling 16s 2.72s linear infinite;
+}
+div:nth-of-type(8) {
+    left: 91vw;
+    width: 109px;
+    height: 109px;
+    animation: falling 14s 2.72s linear infinite;
+}
+div:nth-of-type(9) {
+    left: 05vw;
+    width: 101px;
+    height: 101px;
+    animation: falling 11s 2.72s linear infinite;}
+
+
+
+
+
+
+
+
 </style>
 </head>
 <body>
-   <div class="container"> 
-    <form action="https://www.google.com/search" method="GET">
-        <input type="text" name="q">
-        <button type="submit">поиск</button>
-     </form> 
-    </div>  
+    <div class="flower-1"></div>
+    <div class="flower-1"></div>
+    <div class="flower-1"></div>
+    <div class="flower-2"></div>
+    <div class="flower-2"></div>
+    <div class="flower-2"></div>
+    <div class="flower-3"></div>
+    <div class="flower-3"></div>
+    <div class="flower-3"></div>
+<h1>Summer is coming...</h1>
 </body>
 </html>

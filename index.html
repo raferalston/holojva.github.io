@@ -4,37 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<link rel="stylesheet" href="style2.css">
+<style>
+    body {
+        display: flex;
+        margin: 0em;
+    }
+.container {
+   display: flex;
+   color:white;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   background-color: darkmagenta;
+height: 100vh;
+margin: 0em;
+padding: 0mm;
+overflow: hidden;
+width: 100%;
+}
+h1 {
+    font-size: 6em;
+    margin: .25em;
+}
+.elevator {
+    height: 45%;
+    width: 100%;
+    position: relative;
+}
+.rytzar {
+    background-image: url(kn_1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: left;
+    animation: nalevo 1s linear;
+    height: 100%;
+    width: 25%;
+    position: absolute;
+    right: 10%;
+}
+
+.rytzar2 {
+    background-image: url(kn_2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    animation: napravo 1s linear;
+    height: 100%;
+    width: 25%;
+    position: absolute;
+    right: 10%;
+}
+.download {
+    font-size: 4em;
+    padding: .25em;
+    border: 10px solid white;
+    color: white;
+    margin-bottom: 1em;
+    cursor:pointer
+}
+
+@keyframes nalevo {
+        0% {
+            opacity: 0;
+            left: -400px;
+        }
+
+        100% {
+            opacity: 1;
+            left: 10%;
+        }
+    }
+    @keyframes napravo {
+        0% {
+            opacity: 0;
+            right: -400px;
+        }
+
+        100% {
+            opacity: 1;
+            right: 10%;
+        }
+    }
+</style>
 </head>
 <body>
-   <div id="site">
-<div id="info">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium deleniti tempora sed corrupti provident, nulla officia placeat temporibus assumenda aliquam architecto, minus quo ex. Hic quisquam asperiores earum vitae cum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae suscipit corporis eos nisi quibusdam labore voluptates, sed voluptatum vel atque! Qui neque consequuntur, tempore adipisci perferendis modi quam molestiae.
-    Ad voluptas cupiditate numquam ut deleniti quae eaque quod unde, doloremque aspernatur ipsam commodi? Sunt praesentium eligendi ipsam dolorum, facere deleniti soluta suscipit quia quaerat consequuntur ex eos dolor quidem.
-    Fugiat alias quis laboriosam sit ab cupiditate eligendi iusto repellat. Architecto, esse odio aliquam placeat, tenetur blanditiis optio explicabo quos natus velit, debitis vero maiores magni. Aliquam officia debitis exercitationem.
-    Atque, laborum. Earum, quia ducimus nihil distinctio omnis accusantium quis voluptatum hic. Facere nobis error vel ullam dolorum ducimus, nihil labore ipsam quaerat laboriosam alias assumenda? Voluptates soluta ex laboriosam?
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum, harum ab! Tenetur tempore aperiam beatae impedit vitae perferendis, aliquam nam dolores corrupti eos! Accusantium fugiat sint ut recusandae iusto. Esse.
-Itaque quis ea velit possimus voluptatum obcaecati pariatur error debitis voluptates odit asperiores cum excepturi dignissimos accusantium aliquid laborum animi rem repellat at, ex recusandae. Sunt aut eveniet ipsa ducimus.
-Laudantium consequatur cupiditate impedit voluptas aut alias nemo doloribus culpa itaque corrupti debitis, consectetur molestias temporibus quam quisquam porro saepe sed, accusamus cumque eveniet et obcaecati dignissimos enim aliquam. Eos!
-Dolore deserunt asperiores aut eveniet perspiciatis doloribus repudiandae esse natus commodi deleniti, mollitia neque. Nobis error eos nesciunt deleniti obcaecati assumenda excepturi illum corporis illo, deserunt delectus hic ducimus quae!
+    <div class="container">
+<div class="king">
+    <h1>LITTLE KINGDOM</h1>
 </div>
-<div id="navbarchik">
-       <h1>MY SITE__________home__about =</h1>
+<div class="elevator">
+<div class="rytzar">
+    
 </div>
-<div id="photo">
+  <div class="rytzar2">
+      
+  </div>  
 
 </div>
-<div id="photo2">
-
+<div class="download">
+DOWNLOAD
 </div>
-<div id="life">
-<h1>--life--</h1>
 </div>
-<div id="personal">
-<h1>--personal--</h1>
-</div>
-
-
-   </div> 
 </body>
 </html>

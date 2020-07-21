@@ -7,34 +7,37 @@
 </head>
 <body>
     <script>
-    let words = ['apple', 'barbarian', 'glory'];
-    let word = words[Math.floor(math.random() * words.length)];
-    let template = [];
-    for (let i = 0; i < word.length; i++) {
-        template.push('_');
-    }
-    let  remainLetters = word.length
-    alert('Привет, я загадал слово состоящее из ' + remainLetters + 'букв, попробуй угадай!');
+        let words = ['apple', 'barbarian', 'glory'];
+        let word = words[Math.floor(Math.random() * words.length)];
+        let template = [];
+        for (let i = 0; i < word.length; i++) {
+            template.push('_');
+        }
+        let remainLetters = word.length
+        alert('Привет, я загадал слово состоящее из ' + remainLetters + 'букв, попробуй угадай!');
+        
         while (remainLetters > 0) {
-        alert(template.join(' '))
-        let guess = prompt("введите букву: ")
 
-        if (guess === null) {
-            break;
-        }
-        else if (guess.length !== 1) {
-            alert('введите одну букву!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-        }
-        else {
-            for (const key in word) {
-                if (word[key] === guess) {
-    template[key] = guess;
-    remainLetters--;
+            alert(template.join(' '))
+            let guess = prompt("введите букву: ")
+
+            if (guess === null) {
+                break;
+            }
+            else if (guess.length !== 1) {
+                alert('введите одну букву!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+            }
+            else {
+                for (const key in word) {
+                    if (word[key] === guess) {
+                        template[key] = guess;
+                        remainLetters--;
+                }
             }
         }
     }
-  alert(template.join(' ')) ;
-  alert('Молодец, ты, как тебя там. Слово ' + word) 
+    alert(template.join(' ')) ;
+    alert('Молодец, ты, как тебя там. Слово ' + word) 
     </script>
 </body>
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [prompt('напиши через запятую числа, среди которых надо найти самое большое и самое маленькое')];
+        let min = arr[0];
+        let max = arr[0];
+        let poryadok = 1;
+        for (let i = 0; poryadok - 1 === arr.length; i++) {
+            if (arr[poryadok] > max) {
+                max = arr[poryadok]
+            }
+            else if (arr[poryadok] < min) {
+                min = arr[poryadok]
+            }
+        
+        }
+
+    </script>
+</body>
+</html>

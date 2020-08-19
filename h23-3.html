@@ -8,16 +8,16 @@
 <body>
     <script>
         let word = prompt('говори слово');
-        let anWord = '';
-        let anAnAnword = word.length;
-       let anAnWord = function (x) {
-            for ( let i = 0; i < anAnAnword; i++ ) {
-                anWord += word[anAnAnword - 1]
-                return anWord
+        let wordLength = word.length;
+        
+        let reverseWord = function (word) {
+            let tmp
+            for ( let i = wordLength - 1; i > 0; i-- ) {
+                tmp += word[i]
             }
-         
         }
-        alert('результат: ' + anAnWord(word))
+        
+        alert('результат: ' + reverseWord(word))
     </script>
 </body>
 </html>

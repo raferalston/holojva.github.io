@@ -7,18 +7,15 @@
 </head>
 <body>
     <script>
-        let t = 2;
-        let peremennaya = 0;
         function cupi(x) {
             return 'все_говорят_' + x + '_а_ты_купи_слона'
-
         }
     
         peremennaya = prompt('купи слона')
-        t = 1;
-        while (t === 1) {
-        peremennaya = prompt(cupi(peremennaya))
-    }
+        
+        while (true) {
+            peremennaya = prompt(cupi(peremennaya))
+        }
     </script>
 </body>
 </html>

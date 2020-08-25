@@ -1,0 +1,11 @@
+let c = prompt('выбери текст для заголовка')
+let d = prompt('выбери цвет для заголовка')
+let e = prompt('выбери текст для параграфа')
+let f = prompt('выбери цвет для параграфа')
+let a = document.getElementById('a')
+let b = document.getElementById('b')
+a.innerHTML = c
+a.style.fontSize = '32px'
+a.style.color = d
+b.innerHTML = e
+b.style.color = f

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body {
+
+        margin: 0%;
+        padding: 0%;
+        display: flex;
+        overflow-x: hidden;
+        flex-wrap: wrap;
+    }
+    div {
+        width: 50%;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2em;
+        transition: all ease .20;
+        cursor: pointer;
+    }
+    .box1 {
+        background-color: white;
+    }
+    .box2 {
+    background-color: darkblue;
+
+    }
+    .box3 {
+        background-color: darkgreen;
+
+    }    
+    .box4 {
+        background-color: darkred;
+    }
+
+
+
+
+</style>
+</head>
+<body>
+  <div class="box1">click</div>
+  <div class="box2"> clik</div>
+  <div class="box3">clicki</div>
+  <div class="box4">clics</div>  
+    <script>
+        let boksies = getElementsByTagName('div')
+        function boxikoNashatie(event){
+            event.target.textContent('Kuda ty klikaesh? Idi otsyda!');
+            event.target.style.backgroundColor = 'danger';
+        }
+        for (let i = 0; i < boksies.length; i++) {
+            let element = boksies[i]
+            element.addEventListener('click', boxikoNashatie);
+        }
+        
+    </script>
+</body>
+</html>

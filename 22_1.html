@@ -6,26 +6,34 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="a"></div>
+    <div class="b"></div>
+    <div class="c"><input type="text">  <button>submit</button></div>
+    
+    
+    
     <script>
         let words = ['apple', 'barbarian', 'glory'];
+        
         let word = words[Math.floor(Math.random() * words.length)];
         let template = [];
         for (let i = 0; i < word.length; i++) {
             template.push('_');
         }
         let remainLetters = word.length
-        alert('Привет, я загадал слово состоящее из ' + remainLetters + 'букв, попробуй угадай!');
-        
+        let a = document.getElementsByClassName('a') 
+        let b = document.getElementsByClassName('b')
+        let c = document.getElementsByClassName('c')
+        a.textContent = ('Привет, я загадал слово состоящее из' + remainLetters + 'букв, попробуй угадай!')
+        c.textContent = ("template.join(' ')")
         while (remainLetters > 0) {
-
-            alert(template.join(' '))
-            let guess = prompt("введите букву: ")
+     
+            let guess = document.querySelector('input[type="text"]').value;
 
             if (guess === null) {
                 break;
             }
             else if (guess.length !== 1) {
-                alert('введите одну букву!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
             }
             else {
                 for (const key in word) {
@@ -36,8 +44,7 @@
             }
         }
     }
-    alert(template.join(' ')) ;
-    alert('Молодец, ты, как тебя там. Слово ' + word) 
+    
     </script>
 </body>
 </html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>ВИ-СЕ-ЛИ-ЦА</title>
+		<style>
+			input {
+				font-size:40px ;
+				display:flex;
+				align-items:flex-end;
+				justify-content:center;
+				color: lightskyblue;
+				background-color: black;
+
+			}
+		#result {
+			font-size:40px ;
+				display:flex;
+				align-items:flex-end;
+				justify-content:center;
+				color: lightskyblue;
+				background-color: black;
+		}
+		body {
+			background-color: black;
+		}
+		</style>
+		<script>
+
+		function check() {
+            let str = document.getElementById('a').value;
+			let str1 = document.getElementById('a1').value;
+            let target = document.getElementById('b').value;
+			let str2 = str1;
+            // let result = document.getElementById('result').value;
+			let pos = 0;
+
+			let foundPos = str.indexOf(target, pos);
+ 
+ 			if (foundPos == -1) {
+   				document.getElementById('result').innerText = ( `Нет такой буквы в этом слове!\nПопробуй ещё` );
+   				
+   			} else {
+
+			     while (pos < str.length + 1) {
+
+					foundPos = str.indexOf(target, pos); 
+					if (foundPos == -1) { break; }
+			        str2 = str2.substring(0,foundPos) + str[foundPos] +  str2.substring(foundPos+1) ;
+				    document.getElementById('a1').value = str2;
+				    document.getElementById('result').innerText = ( `Молодец!\nТак держать!` );
+					pos = foundPos + 1;
+					
+					// alert('pos=' + pos + ';' + 'foundPos=' + foundPos);
+ 
+		        }	
+		 
+			}
+			
+			if (str2 == str) {document.getElementById('result').innerText = ( `CONGRATULATIONS !!!` );
+					}
+
+		} 
+
+		/*            let pos = 0;
+while (true) {
+  let foundPos = str.indexOf(target, pos);
+  if (foundPos == -1) break;
+
+  alert( `Найдено тут: ${foundPos}` );
+  pos = foundPos + 1; // продолжаем со следующей позиции
+}*/
+
+            /*while ((pos = str.indexOf(target, pos + 1)) != -1) {
+              alert( pos );
+            }*/
+		</script>
+	</head>          
+
+	<body>
+		<form>
+			<input id="a" type="hidden" value="offensive"><br>
+			<input id="a1" type="text" value="*********"><br>
+			<input id="b" type="text" value="а"><br>
+			<input type="button" value="Проверить" onclick="check();"><br>
+		</form>
+	<div id="result"></div>
+	
+</body>
+
+</html>

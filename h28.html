@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+input {
+    display: flex;
+    font-size: 200px;
+    overflow: hidden;
+}
+.box {
+    font-size: 40px;
+    margin: 10px black;
+}
+</style>
+</head>
+<body>
+   
+
+<input type="submit" value="нажми">
+<div class="box">
+
+</div>
+<script>
+    let input = document.querySelector('input')
+    let box = document.querySelector('.box')
+    let countClicks = 982225
+    
+    input.addEventListener('click', clickIntosh)
+    input.addEventListener('contextmenu', macClick)
+    box.textContent = 'OCTAЛОСЬ НАЖАТЬ 982225 РАЗ'
+    function macClick () {
+        countClicks++
+        box.textContent = ('ОСТАЛОСЬ НАЖАТЬ ' + countClicks + ' РАЗ')
+        if (countClicks === 0) {
+            box.textContent = 'позвони по номеру 79257929718, и требуй свои законные 500 рублей';
+        }
+    }
+    function clickIntosh () {
+        countClicks--
+        box.textContent = ('ОСТАЛОСЬ НАЖАТЬ ' + countClicks + ' РАЗ')
+        if (countClicks === 0) {
+            box.textContent = 'Молодец, потратил свое время!';
+        }
+    }   
+</script>
+</body>
+</html>

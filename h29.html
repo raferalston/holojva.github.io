@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body {
+        display: flex;
+        overflow: hidden;
+        flex-wrap: wrap;
+        margin: 0em;
+        padding: 0em;
+        font-size: 2em;
+    }
+    
+    .box1 {
+        display: flex;
+        height: 50vh;
+        width: 50vw;
+        cursor: pointer; 
+        color: white;
+        background-color: green;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+
+    }
+    .box2 {
+        display: flex;
+        height: 50vh;
+        width: 50vw;
+        cursor: pointer; 
+        color: black;
+        background-color: yellow;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+
+    }
+    .box3 {
+        display: flex;
+        height: 50vh;
+        width: 50vw;
+        cursor: pointer; 
+        color:white;
+        background-color: burlywood;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+
+    }
+    .box4 {
+        display: flex;
+        height: 50vh;
+        width: 50vw;
+        cursor: pointer; 
+        color: white;
+        background-color: blue;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+
+    }
+
+</style>
+</head>
+
+<body>
+ <div class="box1">PNI MENYA</div>   
+ <div class="box2">PNI MENYA</div>
+ <div class="box3">PNI MENYA</div>
+ <div class="box4">PNI MENYA</div>
+<script>
+    let box1 = document.querySelector('box1')
+    let box2 = document.querySelector('box2')
+    let box3 = document.querySelector('box3')
+    let box4 = document.querySelector('box4')
+   
+    function clickIntosh1(event) {
+        event.target.style.backgroundColor = ('tomato');
+        event.target.textContent = ('tomato');
+        
+    }
+    function clickIntosh2(event) {
+        event.target.style.backgroundColor = ('tomato');
+        event.target.textContent = ('tomato');
+            
+    }
+    function clickIntosh3(event) {
+        event.target.style.backgroundColor = ('tomato');
+        event.target.textContent = ('tomato');
+           
+    }
+    function clickIntosh4(event) {
+        event.target.style.backgroundColor = ('tomato');
+        event.target.textContent = ('tomato');
+           
+    }
+    box1.addEventListener('click', clickIntosh1)
+    box2.addEventListener('click', clickIntosh2)
+    box3.addEventListener('click', clickIntosh3)
+    box4.addEventListener('click', clickIntosh4)
+</script>
+</body>
+</html>

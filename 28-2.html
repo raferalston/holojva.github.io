@@ -36,11 +36,11 @@
                 this.car.style.left = this.x + 'px';
                 this.car.style.top = this.y + 'px';
                 field.append(this.car);
-
             }
-            player_1.render();
+            
+
             this.moveLeft = function() {
-            this.x -= 5
+                this.x -= 5
             }
             this.moveRight = function() {
                 this.x += 5
@@ -51,20 +51,20 @@
             this.moveDown = function() {
                 this.y -= 5
             }
-                this.render = function() {
+            
+            this.render = function() {
                 this.car.style.left = this.x + 'px'
                 this.car.style.top = this.y + 'px'
                 
             }
-        
-       
-            
-            }
+        }
            
         
         let player_1 = new Car(50, 200);
+        
         player_1.create();
         document.addEventListener('keydown' , keyPressEvent)
+        
         function keyPressEvent(event) {
             keyCode = event.keyCode; 
             if (keyCode === 87) {
@@ -78,7 +78,9 @@
             }
             else if (keyCode === 65) {
                 player_1.moveLeft();
-            }}
+            }
+            player_1.render();
+        }
     </script>  
 </body>
 </html>

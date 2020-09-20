@@ -18,6 +18,8 @@
         background-color: black;
         font-size: 1em;
         width: 100vw;
+        color: blanchedalmond;
+        visibility: hidden;
     }
     #map {
         height: 80%;
@@ -60,7 +62,7 @@
 <body>
     
     <div id="consol">
-        gf
+        
     </div>
     <div id="map">
         
@@ -104,28 +106,33 @@
             let a = x - treasurePositionX;
             let b = y - treasurePositionY;
             let c = (a * a + b * b) ** 0.5;
-            if (c >= 250) {
-                consol.textContent('too cold');
+            if (c >= 350) {
+                consol.textContent = ('too cold');
                 consol.style.backgroundColor = 'purple'
             }
-            else if (c >= 150) {
-                consol.textContent('cold');
+            else if (c >= 250) {
+                consol.textContent = ('cold');
                 consol.style.backgroundColor = 'blue'
             }
-            else if (c >= 100) {
-                consol.textContent('warm');
+            else if (c >= 200) {
+                consol.textContent = ('warm');
                 consol.style.backgroundColor = 'green'
             }
         
-            else if (c >= 75) {
-                consol.textContent('hot');
+            else if (c >= 175) {
+                consol.textContent = ('hot');
                 consol.style.backgroundColor = 'tomato'
             }
-            else if (c >= 40) {
-                consol.textContent('very hot');
+            else if (c >= 140) {
+                consol.textContent = ('very hot');
                 consol.style.backgroundColor = 'red'
             }
-        }
+            else if (c >= 50) {
+                consol.textContent = ('very hot');
+                consol.style.visibility = 'visible'
+            }
+            }
+        
             let computerPosX = 25;
         let computerWidth = pirate.clientWidth;
         let computerMoveInterval = setInterval(computerMove, 250)
@@ -135,7 +142,7 @@
             if (computerPosX >= computerWidth) {
                 computer.remove();
                 clearInterval(computerMoveInterval);
-                console.log('you lose!');
+                consol.textContent = 'you lose!';
             }
         }
     

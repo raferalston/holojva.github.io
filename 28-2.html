@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0%;
+            padding: 0%;
+            height: 100%;
+            background-color: #071e3d;
+        }
+        .car {
+            position: absolute;
+            height: 100px;
+            width: 200px;
+            background-image: url('car.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div id="field"></div>
+    <script>
+        let field = document.querySelector('#field')
+        let Car = function(x, y) {
+            this.car = null;
+            this.x = x;
+            this.y = y;
+            this.create = function(){
+                this.car = document.createElement('div');
+                this.car.classList = 'car';
+                this.car.style.left = this.x + 'px';
+                this.car.style.top = this.y + 'px';
+                field.append(this.car);
+
+            }
+            player_1.render();
+            this.moveLeft = function() {
+            this.x -= 5
+            }
+            this.moveRight = function() {
+                this.x += 5
+            }
+            this.moveUp = function() {
+                this.y += 5
+            }
+            this.moveDown = function() {
+                this.y -= 5
+            }
+                this.render = function() {
+                this.car.style.left = this.x + 'px'
+                this.car.style.top = this.y + 'px'
+                
+            }
+        
+       
+            
+            }
+           
+        
+        let player_1 = new Car(50, 200);
+        player_1.create();
+        document.addEventListener('keydown' , keyPressEvent)
+        function keyPressEvent(event) {
+            keyCode = event.keyCode; 
+            if (keyCode === 87) {
+                player_1.moveUp();
+            }
+            else if (keyCode === 68) {
+                player_1.moveRight();
+            }
+            else if (keyCode === 83) {
+                player_1.moveDown();
+            }
+            else if (keyCode === 65) {
+                player_1.moveLeft();
+            }}
+    </script>  
+</body>
+</html>

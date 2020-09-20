@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0%;
+        height: 100vh;
+        overflow: hidden;
+    }
+    #consol {
+        display: flex;
+        height: 10%;
+        background-color: black;
+        font-size: 1em;
+        width: 100vw;
+    }
+    #map {
+        height: 80%;
+        background-image: url("2.jpg");
+        position: relative;
+    }
+    #status {
+        height: 10%;
+        width: 100%;
+        position: relative;
+        bottom: 0%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    #pirate {
+        width: 100%;
+        height: 100%;
+        background-color: brown;
+        position: relative;
+    }
+    #computer {
+        position: absolute;
+        width: 40px;
+        height: 30px;
+        left: 25px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url('4.png');
+    }
+    #treasure {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-image: url('3.png');
+    }
+
+</style>
+<body>
+    
+    <div id="consol">
+        gf
+    </div>
+    <div id="map">
+        
+        <div id="treasure">
+
+        </div>
+
+    </div>
+    <div id="status">
+        <div id="pirate">
+            <div id="computer"></div>
+        </div>
+    </div>
+    <script>
+        let map = document.querySelector('#map')
+        let status = document.querySelector('#status')
+        let pirate = document.querySelector('#pirate')
+        let computer = document.querySelector('#computer')
+        let treasure = document.querySelector('#treasure')
+        let consol = document.querySelector('#consol')
+        let lifes = 5;
+        let treasurePositionX = Math.random() * (map.clientWidth - 100);
+        let treasurePositionY = Math.random() * (map.clientHeight - 100);
+
+        treasure.style.left = treasurePositionX + 'px'
+        treasure.style.top = treasurePositionY + 'px'
+
+        map.addEventListener('click', mapEvent);
+        function mapEvent(event) {
+            let x = event.clientX;
+            let y = event.clientY;
+            if ((x >= treasurePositionX && x <= treasurePositionX + 40) && (y >= treasurePositionY && y <= treasurePositionY + 40)) {
+                console.log('You found the treasure')
+            }
+            else {
+            lifes--
+            howFarTreasure(x, y);
+            }
+        } 
+        function howFarTreasure(x, y) {
+            let a = x - treasurePositionX;
+            let b = y - treasurePositionY;
+            let c = (a * a + b * b) ** 0.5;
+            if (c >= 250) {
+                consol.textContent('too cold');
+                consol.style.backgroundColor = 'purple'
+            }
+            else if (c >= 150) {
+                consol.textContent('cold');
+                consol.style.backgroundColor = 'blue'
+            }
+            else if (c >= 100) {
+                consol.textContent('warm');
+                consol.style.backgroundColor = 'green'
+            }
+        
+            else if (c >= 75) {
+                consol.textContent('hot');
+                consol.style.backgroundColor = 'tomato'
+            }
+            else if (c >= 40) {
+                consol.textContent('very hot');
+                consol.style.backgroundColor = 'red'
+            }
+        }
+            let computerPosX = 25;
+        let computerWidth = pirate.clientWidth;
+        let computerMoveInterval = setInterval(computerMove, 250)
+        function computerMove() {
+            computerPosX += 25; 
+            computer.style.left = computerPosX + 'px';
+            if (computerPosX >= computerWidth) {
+                computer.remove();
+                clearInterval(computerMoveInterval);
+                console.log('you lose!');
+            }
+        }
+    
+    
+
+
+
+
+    </script>
+</body>
+</html>

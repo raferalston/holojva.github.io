@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body {
+        margin: 0%;
+        padding: 0%;
+        height: 100vh;
+        background-color: blanchedalmond;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #road {
+        height: 80%;
+        width: 100%;
+        background-color: thistle;
+
+    }
+    #status {
+        height: 20%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #status > #bar {
+        width: 50%;
+        height: 80%;
+        background-color: #95389e;
+    }
+    .boat {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        transform: all ease .05;
+    }
+    .boat > h3 {
+        color: white;
+    }
+    .boat.winner {
+        top: 50%;
+        left: 50% !important;
+        transform: translate(-50%, -50%);
+        position: absolute;
+    }
+    .boat.winner::before {
+        content: 'WINNER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!';
+        position: absolute;
+        top: -50% -50%;
+        left: 50%;
+        white-space: nowrap;
+        font-size: 2em;
+        transform: translate(-50%, -50%);
+    }
+</style>
+</head>
+<body>
+    <div id="road"></div>
+    <div id="status">
+        <div id="bar">Тут будет важная информация о гонке</div>
+    </div>
+    <script>
+        let road = document.querySelector('#road')
+        let status = document.querySelector('#status')
+        let Boat = function(name, color, size) {
+            this.element = null;
+            this.name = name;
+            this.color = color;
+            this.width = size;
+            this.height = size / 2;
+            this.posX = 0
+            this.create = function() {
+                this.element = document.createElement('div');
+                this.element.className = 'boat'
+                this.element.style.width = this.width + "px";
+                this.element.style.height = this.height + "px";
+                this.element.style.backroundColor = this.color;
+                this.element.innerHTML = '<h3>' + this.name + '</h3>';
+                road.append(this.element);
+
+            }
+            this.move = function(){
+                this.posX += Math.random() * 5;
+                this.element.style.left = this.posX + 'px';
+            }
+            this.checkCollision = function() {
+                if (this.posX + this.width > road.clientWidth) {
+                    return true
+                }
+                return false
+            }
+            this.winner = function() {
+                this.element.className = 'boat winner';
+            }
+            
+        }
+        boat_1 = new Boat('Flyer', 'blue', 100);
+        boat_1.create();
+        boat_2 = new Boat('Glider', 'red', 100);
+        boat_2.create();
+    </script>
+</body>
+</html>

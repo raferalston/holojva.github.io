@@ -17,9 +17,9 @@
         height: 10%;
         background-color: black;
         font-size: 1em;
-        width: 100vw;
         color: blanchedalmond;
-        visibility: hidden;
+        
+        
     }
     #map {
         height: 80%;
@@ -56,6 +56,7 @@
     width: 100px;
     height: 100px;
     background-image: url('3.png');
+    visibility: hidden;
     }
 
 </style>
@@ -94,8 +95,12 @@
         function mapEvent(event) {
             let x = event.clientX;
             let y = event.clientY;
-            if ((x >= treasurePositionX && x <= treasurePositionX + 40) && (y >= treasurePositionY && y <= treasurePositionY + 40)) {
-                console.log('You found the treasure')
+            if ((x >= treasurePositionX && x <= treasurePositionX + 100) && (y >= treasurePositionY + 60 && y <= treasurePositionY + 180)) {
+                consol.textContent = 'You found the treasure'
+                treasure.style.visibility = 'visible'
+                computer.remove();
+                clearInterval(computerMoveInterval);
+                
             }
             else {
             lifes--
@@ -123,26 +128,31 @@
                 consol.textContent = ('hot');
                 consol.style.backgroundColor = 'tomato'
             }
-            else if (c >= 140) {
+            else if (c >= 80) {
                 consol.textContent = ('very hot');
                 consol.style.backgroundColor = 'red'
-            }
-            else if (c >= 50) {
-                consol.textContent = ('very hot');
-                consol.style.visibility = 'visible'
             }
             }
         
             let computerPosX = 25;
         let computerWidth = pirate.clientWidth;
-        let computerMoveInterval = setInterval(computerMove, 250)
+        let computerMoveInterval = setInterval(computerMove, 20)
         function computerMove() {
-            computerPosX += 25; 
+            computerPosX += 1; 
             computer.style.left = computerPosX + 'px';
             if (computerPosX >= computerWidth) {
                 computer.remove();
                 clearInterval(computerMoveInterval);
-                consol.textContent = 'you lose!';
+                consol.style.visibility = 'hidden'
+                treasure.style.visibility = 'hidden'
+                map.style.visibility = 'hidden'
+                status.style.visibility = 'hidden'
+                pirate.style.visibility = 'hidden'
+                computer.style.visibility = 'hidden'
+                
+
+
+                
             }
         }
     

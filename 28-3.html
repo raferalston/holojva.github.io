@@ -32,10 +32,15 @@
    <input type="button" value="activate">
    
    <script>
-        document.addEventListener('mousemove, punchHearts')
+        
         let x = null
 
+        
         let y = null
+
+
+        document.addEventListener('mousemove', punchHearts)
+
         function punchHearts() {
             x = event.clientX
             y = event.clientY

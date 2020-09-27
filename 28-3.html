@@ -16,7 +16,10 @@
         }
     } 
     div {
-        background-image: url(heartw.png);
+        background-image: url(car.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         animation: moveHearts 2s linear infinite;
         height: 100px;
         width: 100px;
@@ -30,26 +33,26 @@
 </head>
 <body>
    <input type="button" value="activate">
-   
    <script>
         
-        let x = null
-
         
-        let y = null
 
 
         document.addEventListener('mousemove', punchHearts)
-
+        setInterval('heartsAltDelete', 2000)
         function punchHearts() {
-            x = event.clientX
-            y = event.clientY
+            // let x = event.clientX
+            // let y = event.clientY
+            let x = 1000
+            let y = 500
             let serdtse = document.createElement('div')
             serdtse.style.top = x + 'px'
             serdtse.style.left = y + 'px'
 
         }
-    
+        function heartsAltDelete() {
+            serdtse.remove()
+        }
     </script>
 </body>
 </html>

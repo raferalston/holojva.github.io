@@ -45,18 +45,17 @@ transition: all ease .25s;
 
 
 
-#circle.is-visible{
-position: absolute;
-background-color: red;
-width: 200px;
-height: 200px;
-opacity: 1;
-visibility: 1;
-border-radius: 50%;
-z-index: -1;
+    #circle.is-visible {
+        position: absolute;
+        background-color: red;
+        width: 400px; /* Предыдущие значения были 200px, ровно столько сколько изначальный элемент (мы просто не могли увидеть новый элемент) */
+        height: 400px;
+        opacity: 1;
+        visibility: visible; /* Тут значение было 1, это неверное значение для свойства visible*/
+        border-radius: 50%;
+        z-index: -1;
+    }
 
-
-}
 
 
 </style>

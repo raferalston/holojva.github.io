@@ -4,10 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+       @keyframes moveHearts {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                top: 0;
+                opacity: 0;
+            }
+        } 
+        div {
+            background-image: url(8.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            height: 200px;
+            width: 400px;
+            animation: moveHearts 2s linear infinite;
+            transform: translate(-50%, -50%);
+        }
+    body {
+        background-image: url('6.jpg');
+    }
+    </style>
 </head>
 <body>
-    <audio controls>
-        <source src="Видео (2).wav" type="audio/mpeg">
-    </audio>
+   <script>
+        document.addEventListener('mousemove', punchHearts)
+        let body = document.querySelector('body')
+
+        function punchHearts() {
+            let x = event.clientX
+            let y = event.clientY
+            let serdtse = document.createElement('div')
+            serdtse.style.left = x + 'px'
+            serdtse.style.top = y + 'px'
+            body.append(serdtse)
+
+            // add method for remove serdtse
+            setInterval(heartsAltDelete, 2000, serdtse)
+
+        }
+
+        function heartsAltDelete(s) {
+            s.remove()
+        }
+       
+    let foo = [1, 2, 7, -14, 15]
+
+    // get random number
+
+    console.log(foo[Math.floor(Math.random() * foo.length)])
+    </script>
 </body>
 </html>

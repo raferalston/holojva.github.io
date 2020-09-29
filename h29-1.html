@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .modal {
+            opacity: 0;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 5em;
+            height: 300px;
+            width: 500px;
+
+        }
+        .notModal {
+            opacity: 1;
+            position: fixed;
+            font-size: 5em;
+            height: 300px;
+            width: 500px;
+        }
+    </style>
+</head>
+   
+    <body oncopy="return false;">
+     privetiki
+    
+    <button class='modal'>а вот это модал</button>
+    <button class="notModal">это не модал</button>
+   
+
+
+    <script>
+       let body = document.querySelector('body')
+       let button1 = document.querySelector('.notModal')
+       let button2 = document.querySelector('.modal')
+       button1.onclick = doNothing;
+       function doNothing() {
+        button2.style.opacity = '1'
+        button2.style.opacity = '1'
+        button2.onclick = notDoNothing;
+        button1.style.zIndex = '1'
+        button2.style.zIndex = '2'
+        function notDoNothing() {
+            body.style.opacity = '1'
+            button2.style.opacity = '0'
+            button2.onclick = doNothing;
+            button1.style.zIndex = '2'
+            button2.style.zIndex = '1'
+        }
+       }
+        
+    </script>
+</body>
+</html>

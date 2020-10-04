@@ -15,6 +15,7 @@
         align-items: center;
         flex-direction: column;
     }
+
     #road {
         height: 80%;
         width: 100%;
@@ -64,10 +65,14 @@
     <div id="road"></div>
     <div id="status">
         <div id="bar">Тут будет важная информация о гонке</div>
+        <div id="bakh">ok</div>
     </div>
     <script>
         let road = document.querySelector('#road')
         let status = document.querySelector('#status')
+        let bar = document.querySelector('#bar')
+        let lider = 'nothing'
+        let liderPos = 0
         let Boat = function(name, color, size) {
             this.element = null;
             this.name = name;
@@ -80,13 +85,14 @@
                 this.element.className = 'boat'
                 this.element.style.width = this.width + "px";
                 this.element.style.height = this.height + "px";
-                this.element.style.backroundColor = this.color;
+                this.element.style.backgroundColor = this.color;
                 this.element.innerHTML = '<h3>' + this.name + '</h3>';
                 road.append(this.element);
 
             }
             this.move = function(){
                 this.posX += Math.random() * 5;
+                bar.textContent = 'скорость ' +  Math.floor(Math.random() * 100) + ' км/ч';
                 this.element.style.left = this.posX + 'px';
             }
             this.checkCollision = function() {
@@ -98,12 +104,54 @@
             this.winner = function() {
                 this.element.className = 'boat winner';
             }
-            
+            this.checkLider = function() {
+                
+                
+                for (let i = 0; i < boats.length; i++) {
+                    let b = boats[i]
+                    if (liderPos < b.clientWidth) {
+                        lider = b
+                    }
+                    
+
+
+                }
+            }
+            return lider
         }
-        boat_1 = new Boat('Flyer', 'blue', 100);
+        boat_1 = new Boat('ACER', 'blue', 100);
         boat_1.create();
-        boat_2 = new Boat('Glider', 'red', 100);
+        boat_2 = new Boat('LENOVO', 'red', 100);
         boat_2.create();
+        boat_3 = new Boat('APPLE', 'orange', 100);
+        boat_3.create();
+        boat_4 = new Boat('SAMSUNG', 'green', 100)
+        boat_4.create();
+        boat_5 = new Boat('ASUS', 'brown', 100)
+        boat_5.create();
+        boat_6 = new Boat('DELL', 'pink', 100)
+        boat_6.create();
+        boat_7 = new Boat('HP', 'purple', 100)
+        boat_7.create();
+        boat_8 = new Boat('SONY', 'black', 100)
+        boat_8.create();
+        let boats = [boat_1, boat_2, boat_3, boat_4, boat_5, boat_6, boat_7, boat_8];
+        
+                
+        
+        gameLoop = setInterval(game, 30);
+        function game() {
+            for (let i = 0; i < boats.length; i++) {
+                b = boats[i]
+                b.move();
+                b.checkLider();
+                if (b.checkCollision()) {
+                    b.winner();
+                    clearInterval(gameLoop);
+                }
+                bakh.textContent = lider
+            }
+        }
     </script>
 </body>
 </html>

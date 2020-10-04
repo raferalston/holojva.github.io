@@ -62,13 +62,20 @@
 </style>
 </head>
 <body>
+    сколько игроков?
+    
+    <input type="text" id="ok">
+    <input type="submit" value="send">
     <div id="road"></div>
     <div id="status">
         <div id="bar">Тут будет важная информация о гонке</div>
         <div id="bakh">ok</div>
     </div>
     <script>
-        let road = document.querySelector('#road')
+        document.addEventListener('keydown', function(event) {
+        let inputA = document.querySelector('#ok').value
+  if (event.code == 'Enter' && (event.ctrlKey || event.metaKey)) {
+    let road = document.querySelector('#road')
         let status = document.querySelector('#status')
         let bar = document.querySelector('#bar')
         let lider = 'nothing'
@@ -136,7 +143,9 @@
         boat_8 = new Boat('SONY', 'black', 100)
         boat_8.create();
         let boats = [boat_1, boat_2, boat_3, boat_4, boat_5, boat_6, boat_7, boat_8];
-        
+        for (let i = 0; i < inputA; i++) {
+            boats.pop()
+        }
                 
         
         gameLoop = setInterval(game, 30);
@@ -152,6 +161,9 @@
                 bakh.textContent = lider
             }
         }
+  }
+});
+        
     </script>
 </body>
 </html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+        </style>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: VT323;
+            margin: 0;
+            padding: 0;
+            
+            height: 100vh;
+
+
+        }
+        #dosup {
+            background-color: black;
+            color: white;
+            font-family: VT323;
+            margin: 0;
+            padding: 0;
+            
+            
+           
+ 
+        }
+        input {
+            background-color: black;
+            color: white;
+            font-family: VT323;
+            
+        }
+        #dosdown {
+            background-color: black;
+            color: white;
+            font-family: VT323;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 5em;
+        }
+        ::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
+    </style>
+</head>
+<body>
+    <div id="dosup"><h1>KOSTYA OS</h1></div>
+    <div id="dosdown">
+        <input type="text">
+    </div>
+
+    
+    
+    <script>
+        let textik = ''
+        let input = document.querySelector('input')
+        let dosup = document.querySelector('#dosup')
+        let dosdown = document.querySelector('#dosdown')
+        addEventListener('keyup', dos)
+        function dos() {
+            
+            if (event.keyCode == 13) {
+                dosup.innerHTML = dosup.innerHTML + '<br>' + input.value;
+                
+                if (input.value == 'help') {
+                dosup.innerHTML = dosup.innerHTML + '<br>' + "I haven't got a commands";
+                input.value = ''
+                }
+                else if (input.value == 'createTextFile') {
+                    input.value = ''
+                    dosup.innerHTML = dosup.innerHTML + '<br>' + "Type your text";
+                    if (input.value != "" && event.keyCode == 13){
+                        
+                        textik = input.value
+                        
+                        
+                        
+                        
+                        
+                    }
+                }
+                else if (input.value == 'seeTextFile'){
+                    dosup.innerHTML = dosup.innerHTML + '<br>' + 'text: ' + textik;    
+                }
+                
+                
+            
+            
+            
+            
+            
+
+            
+            
+            }
+        }
+    </script>
+</body>
+</html>

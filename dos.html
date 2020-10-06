@@ -13,7 +13,7 @@
             background-color: black;
             color: white;
             font-family: VT323;
-            margin: 0;
+            margin: 10px;
             padding: 0;
             
             height: 100vh;
@@ -77,48 +77,69 @@
     
     
     <script>
-        let textik = ''
+        let storage = ''
         let input = document.querySelector('input')
         let dosup = document.querySelector('#dosup')
         let dosdown = document.querySelector('#dosdown')
-        addEventListener('keyup', dos)
-        function dos() {
-            
-            if (event.keyCode == 13) {
-                dosup.innerHTML = dosup.innerHTML + '<br>' + input.value;
-                
-                if (input.value == 'help') {
-                dosup.innerHTML = dosup.innerHTML + '<br>' + "I haven't got a commands";
-                input.value = ''
-                }
-                else if (input.value == 'createTextFile') {
-                    input.value = ''
-                    dosup.innerHTML = dosup.innerHTML + '<br>' + "Type your text";
-                    if (input.value != "" && event.keyCode == 13){
-                        
-                        textik = input.value
-                        
-                        
-                        
-                        
-                        
-                    }
-                }
-                else if (input.value == 'seeTextFile'){
-                    dosup.innerHTML = dosup.innerHTML + '<br>' + 'text: ' + textik;    
-                }
-                
-                
-            
-            
-            
-            
-            
+        let inputField = document.querySelector('input[type=text]')
+        let currentCommand = null
 
-            
-            
-            }
+        inputField.addEventListener('keypress', dispatcher)
+
+        function dispatcher(event) {
+            // В зависимости от event выполняет разные комманды
         }
+
+        function output(text) {
+            dosup.innerHTML = dosup.innerHTML + '<br>' + text;
+        }
+
+        function store(value) {
+            storage = value
+        }
+
+        function longStorage() {
+
+        }
+
+        function shortStorage() {
+            
+        }
+        // function dos(event) {
+        //     if (event.keyCode == 13) {
+                
+        //         if (currentCommand == 'c') {
+        //             dosup.innerHTML = dosup.innerHTML + '<br>' + "Type your text";
+        //             textik = input.value
+        //         }
+                
+        //         if (currentCommand == 'e') {
+        //             dosup.innerHTML = dosup.innerHTML + '<br>' + 'text: ' + textik; 
+        //         }
+
+        //         currentCommand = input.value
+
+        //         if (input.value == 'c') {
+        //             dosup.innerHTML = dosup.innerHTML + '<br>' + "Type your text";
+        //             input.value = ''
+        //         }
+                
+        //     }
+
+            // if (input.value == 'help') {
+            //     dosup.innerHTML = dosup.innerHTML + '<br>' + "I haven't got a commands";
+            //     input.value = ''
+            // } else if (input.value == 'createTextFile') {
+            //     input.value = ''
+            //     dosup.innerHTML = dosup.innerHTML + '<br>' + "Type your text";
+            //     if (input.value != "" && event.keyCode == 13) {
+            //         textik = input.value
+            //     }
+            // } else if (input.value == 'seeTextFile') {
+            //     dosup.innerHTML = dosup.innerHTML + '<br>' + 'text: ' + textik;    
+            // }
+            
+        // }
     </script>
 </body>
 </html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style > canvas, body {
+        height: 100vh;
+        width: 100vw;
+        margin: 0%;
+        padding: 0%;
+    }</style>
+</head>
+<body>
+    <canvas width="100vw" height="100vh" id='canvas'></canvas>
+    <script>
+        let canvas = document.querySelector('#canvas')
+        
+        let ctx = canvas.getContext("2d")
+        canvas.addEventListener('mousedown', mouseDown)
+        function mouseDown() {
+            if (event.keyCode == 49) {
+                ctx.strokeStyle = 'blue'
+            }
+            if (event.keyCode == 50) {
+                ctx.strokeStyle = 'green'
+                
+            } 
+            if (event.keyCode == 51) {
+                ctx.strokeStyle = 'red'
+                
+            }
+            ctx.beginPath()
+            ctx.moveTo(event.clientX, event.clientY);
+            canvas.addEventListener('mousemove', mousemovKA);
+
+        }
+        
+        function mousemovKA() {
+            ctx.lineTo(event.clientX, event.clientY)
+            ctx.stroke()
+        }
+    </script>
+</body>
+</html>

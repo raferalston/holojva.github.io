@@ -18,28 +18,23 @@
         
         let ctx = canvas.getContext("2d")
         canvas.addEventListener('mousedown', mouseDown)
-        function mouseDown() {
-            if (event.keyCode == 49) {
-                ctx.strokeStyle = 'blue'
-            }
-            if (event.keyCode == 50) {
-                ctx.strokeStyle = 'green'
-                
-            } 
-            if (event.keyCode == 51) {
-                ctx.strokeStyle = 'red'
-                
-            }
-            ctx.beginPath()
-            ctx.moveTo(event.clientX, event.clientY);
-            canvas.addEventListener('mousemove', mousemovKA);
+        canvas.addEventListener('mouseup', mouseOtpuska)
 
+        function mouseDown() {
+            canvas.addEventListener('mousemove', mousemovKA);
+            console.log('1')
         }
         
         function mousemovKA() {
-            ctx.lineTo(event.clientX, event.clientY)
-            ctx.stroke()
+            ctx.fillRect(100, 100, 100, 100)
+            ctx.fillRect(110, 110, 75, 37.5)
+            console.log('2')
+        
         }
+        function mouseOtpuska() {
+           canvas.removeEventListener('mousemove', mousemovKA)
+        }
+
     </script>
 </body>
 </html>

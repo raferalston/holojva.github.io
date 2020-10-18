@@ -17,6 +17,7 @@
         let canvas = document.querySelector('#canvas')
         
         let ctx = canvas.getContext("2d")
+        ctx.fillRect(0, 0, 10, 10)
         canvas.addEventListener('mousedown', mouseDown)
         canvas.addEventListener('mouseup', mouseOtpuska)
 
@@ -26,7 +27,7 @@
         }
         
         function mousemovKA() {
-            ctx.fillRect(100, 100, 100, 100)
+            ctx.fillRect(0, 0, 100, 100)
             ctx.fillRect(110, 110, 75, 37.5)
             console.log('2')
         

@@ -15,22 +15,25 @@
     <canvas width="100vw" height="100vh" id='canvas'></canvas>
     <script>
         let canvas = document.querySelector('#canvas')
-        
+        let x = 0
+        let y = 0 
+
         let ctx = canvas.getContext("2d")
         ctx.fillRect(0, 0, 10, 10)
         canvas.addEventListener('mousedown', mouseDown)
         canvas.addEventListener('mouseup', mouseOtpuska)
-
         function mouseDown() {
             canvas.addEventListener('mousemove', mousemovKA);
             console.log('1')
         }
         
         function mousemovKA() {
-            ctx.fillRect(0, 0, 100, 100)
-            ctx.fillRect(110, 110, 75, 37.5)
+            x = event.offSetX
+            y = event.offSetY
+            ctx.fillRect(x, y, 100, 100)
+            console.log(event.offSetX)
             console.log('2')
-        
+            
         }
         function mouseOtpuska() {
            canvas.removeEventListener('mousemove', mousemovKA)

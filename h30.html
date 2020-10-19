@@ -5,40 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style > canvas, body {
-        height: 100vh;
-        width: 100vw;
         margin: 0%;
         padding: 0%;
     }</style>
 </head>
 <body>
-    <canvas width="100vw" height="100vh" id='canvas'></canvas>
+    <button id='red'>red</button>
+    <button id="green">green</button>
+    <button id="blue">blue</button>
+    <canvas width="600px" height="600px" id='canvas'></canvas>
     <script>
         let canvas = document.querySelector('#canvas')
         let x = 0
         let y = 0 
-
+        let red = document.querySelector('#red')
+        let green = document.querySelector('#green')
+        let blue = document.querySelector('#blue')
+ 
         let ctx = canvas.getContext("2d")
         ctx.fillRect(0, 0, 10, 10)
         canvas.addEventListener('mousedown', mouseDown)
         canvas.addEventListener('mouseup', mouseOtpuska)
+        red.addEventListener('click', re)
+        green.addEventListener('click', gree)
+        blue.addEventListener('click', blu)
+        
+        
+        
         function mouseDown() {
             canvas.addEventListener('mousemove', mousemovKA);
             console.log('1')
         }
         
         function mousemovKA(event) {
-            x = event.offSetX
-            y = event.offSetY
-            ctx.fillRect(x, y, 100, 100)
-            console.log(event.offSetX)
+            x = event.offsetX
+            y = event.offsetY
+            ctx.fillRect(x, y, 10, 10)
+        
             console.log('2')
-            
+                    
         }
         function mouseOtpuska() {
            canvas.removeEventListener('mousemove', mousemovKA)
         }
-
+        function re() {
+            ctx.fillStyle == 'red'
+        }
+        function gree() {
+            ctx.fillStyle == 'green'
+        }
+        function blu() {
+            ctx.fillStyle == 'blue'
+        }
     </script>
 </body>
 </html>

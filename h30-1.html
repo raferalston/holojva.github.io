@@ -27,7 +27,24 @@
         let canvas = document.querySelector('#canvas')  
         let ctx = canvas.getContext('2d')
         let posOfRect = 250
-       
+        let squareX = 0
+        let squareY = 0
+        let squareSize = canvas.clientWidth / 20
+        let Cubiki = function() {
+            this.show = function() {
+                for (let i = 0; i < 8; i++) {
+                    ctx.fillStyle = 'blue'
+                    for (let i = 0; i < 20; i++) {
+                        ctx.fillRect(squareX, squareY, squareSize, squareSize)
+                        squareX += squareSize
+                    }
+                    squareY += squareSize
+                    squareX = 0
+                }
+                
+                ctx.fillStyle = 'black'
+            }
+        }
         let Otbivalka = function() {
             this.show = function() {
                 ctx.fillRect(posOfRect, 500, 100, 30)  
@@ -35,22 +52,23 @@
             this.move = function(event) {
                 if (event.keyCode == 37) {
                    ctx.clearRect(posOfRect, 500, 100, 30)
-                   posOfRect = posOfRect - 5
+                   posOfRect = posOfRect - 10
                    ctx.fillRect(posOfRect, 500, 100, 30)
                 }
                 else if (event.keyCode == 39) {
                     ctx.clearRect(posOfRect, 500, 100, 30)
-                    posOfRect = posOfRect + 5
-                    ctx.fillRect(posOfRect, 500, 100, 30)
-                
+                    posOfRect = posOfRect + 10
+                    ctx.fillRect(posOfRect, 500, 100, 30) 
                 }
             }
         }
         let gameLoop = setInterval(game, 150)
         let o = new Otbivalka()
+        let c = new Cubiki()
+        document.addEventListener('keydown', o.move)
+        c.show()
         function game() {
             o.show()
-            o.move()
         }
         
         

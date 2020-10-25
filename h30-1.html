@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style> 
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: firebrick;
+     }
+     #canvas {
+         background-color: floralwhite;
+         border-radius: 5px;
+     }
+
+    </style>
+    <canvas id="canvas" width="600px" height="600px"></canvas>
+    <script>
+        let canvas = document.querySelector('#canvas')  
+        let ctx = canvas.getContext('2d')
+        let posOfRect = 250
+       
+        let Otbivalka = function() {
+            this.show = function() {
+                ctx.fillRect(posOfRect, 500, 100, 30)  
+            }
+            this.move = function(event) {
+                if (event.keyCode == 37) {
+                   ctx.clearRect(posOfRect, 500, 100, 30)
+                   posOfRect = posOfRect - 5
+                   ctx.fillRect(posOfRect, 500, 100, 30)
+                }
+                else if (event.keyCode == 39) {
+                    ctx.clearRect(posOfRect, 500, 100, 30)
+                    posOfRect = posOfRect + 5
+                    ctx.fillRect(posOfRect, 500, 100, 30)
+                
+                }
+            }
+        }
+        let gameLoop = setInterval(game, 150)
+        let o = new Otbivalka()
+        function game() {
+            o.show()
+            o.move()
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>

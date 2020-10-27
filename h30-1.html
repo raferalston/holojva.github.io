@@ -30,6 +30,41 @@
         let squareX = 0
         let squareY = 0
         let squareSize = canvas.clientWidth / 20
+        let Sharik = function() {
+            this.x = 300
+            this.y = 300
+
+            this.info = 0
+            this.show = function() { 
+                ctx.arc(this.x, this.y, 20, 0, Math.PI * 2); 
+            }
+            this.move = function() {
+                if (this.info == 1) {
+                    this.y + 10
+                }
+                if (y == 0) {
+                    ctx.fillRect(0, 0, 600, 600)
+                }
+            }
+            this.Collision = function(other) {
+                for (let i = 0; i < other.length; i++) {
+                    const el = other[i];
+                    if (el != this) {
+                        let distanceX = this.x - el.x;
+                        let distanceY = this.y - el.y;
+                        let distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY)
+                        if (distance < 20 + el.size) {
+                            console.log('bam')
+                            this.info = 1
+                        }
+                    }
+                }
+
+            }
+        
+            
+            
+        }
         let Cubiki = function() {
             this.show = function() {
                 for (let i = 0; i < 8; i++) {
@@ -65,10 +100,13 @@
         let gameLoop = setInterval(game, 150)
         let o = new Otbivalka()
         let c = new Cubiki()
+        let s = new Sharik()
         document.addEventListener('keydown', o.move)
         c.show()
         function game() {
             o.show()
+            s.show()
+            s.move()
         }
         
         

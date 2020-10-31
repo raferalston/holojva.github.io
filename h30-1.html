@@ -30,22 +30,31 @@
         let squareX = 0
         let squareY = 0
         let squareSize = canvas.clientWidth / 20
+
         let Sharik = function() {
             this.x = 300
             this.y = 300
+            this.info = false
+            this.dx = 1
+            this.dy = 2
 
-            this.info = 0
             this.show = function() { 
+                ctx.beginPath();
                 ctx.arc(this.x, this.y, 20, 0, Math.PI * 2); 
+                ctx.fill()
             }
+
             this.move = function() {
-                if (this.info == 1) {
-                    this.y + 10
-                }
-                if (y == 0) {
-                    ctx.fillRect(0, 0, 600, 600)
-                }
+                this.x += this.dx
+                this.y += this.dy
+
+                // if (this.info) {
+                //     this.y + 10
+                // } else {
+                //     ctx.fillRect(0, 0, 600, 600)
+                // }
             }
+
             this.Collision = function(other) {
                 for (let i = 0; i < other.length; i++) {
                     const el = other[i];
@@ -66,44 +75,73 @@
             
         }
         let Cubiki = function() {
-            this.show = function() {
-                for (let i = 0; i < 8; i++) {
-                    ctx.fillStyle = 'blue'
-                    for (let i = 0; i < 20; i++) {
-                        ctx.fillRect(squareX, squareY, squareSize, squareSize)
-                        squareX += squareSize
-                    }
-                    squareY += squareSize
-                    squareX = 0
+            this.cubikiPosition = {};
+            this.w = squareSize;
+            this.h = 15;
+            
+            this.checkCollision = function(sharikPosition) {
+                for (let c in this.cubikiPosition) {
+                    let cubik = this.cubikiPosition[c] 
+
+                    // check cubik if sharikPosition hit it.
+                    // if removeCubik
                 }
-                
-                ctx.fillStyle = 'black'
+            }
+
+            this.buildWall = function() {
+                let id = 0;
+                for (let i = 0; i < 5; i++) {
+                    for (let j = 0; j < 20; j++) {
+                        this.createBrick(j, i, id)
+                        id++
+                    }
+                }
+            }
+            
+            this.createBrick = function(x, y, id) {
+                this.cubikiPosition[id] = {
+                    x: x * this.w,
+                    y: y * this.h
+                }
+            }
+
+            this.showBricks = function() {
+                ctx.fillStyle = 'purple';
+                for (let b in this.cubikiPosition) {
+                    let el = this.cubikiPosition[b];
+                    ctx.fillRect(el.x, el.y, this.w, this.h)
+                }
             }
         }
+
         let Otbivalka = function() {
             this.show = function() {
                 ctx.fillRect(posOfRect, 500, 100, 30)  
             }
             this.move = function(event) {
                 if (event.keyCode == 37) {
-                   ctx.clearRect(posOfRect, 500, 100, 30)
                    posOfRect = posOfRect - 10
                    ctx.fillRect(posOfRect, 500, 100, 30)
                 }
                 else if (event.keyCode == 39) {
-                    ctx.clearRect(posOfRect, 500, 100, 30)
                     posOfRect = posOfRect + 10
                     ctx.fillRect(posOfRect, 500, 100, 30) 
                 }
             }
         }
-        let gameLoop = setInterval(game, 150)
+
         let o = new Otbivalka()
         let c = new Cubiki()
         let s = new Sharik()
+
+        c.buildWall()
+
+        let gameLoop = setInterval(game, 15)
         document.addEventListener('keydown', o.move)
-        c.show()
+
         function game() {
+            ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight)
+            c.showBricks()
             o.show()
             s.show()
             s.move()

@@ -1,0 +1,9 @@
+@import './reset';
+@import './colors';
+@import './text_setup';
+@import './header';
+@import './footer';
+.header-section-wrapper, .mini-games-wrapper, .links-wrapper, .youtube-wrapper, .footer-wrapper {
+    max-width: 1360px;
+    margin: auto;
+}

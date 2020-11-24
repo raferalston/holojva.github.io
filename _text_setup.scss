@@ -1,0 +1,16 @@
+
+
+$pacifico: 'pacifico', fantasy, sans-serif;
+$roboto-slab: 'Roboto Slab', monospace, sans-serif;
+
+// headings
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $pacifico;
+}
+// paragraths
+
+p, button, input, span, a {
+    font-family: $roboto-slab;
+}
+

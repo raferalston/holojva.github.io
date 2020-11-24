@@ -1,0 +1,56 @@
+
+.header-section {
+    background-color: $black;
+    &-wrapper {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .header-image {
+            background-image: url('../img/header-bg__image.png');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+            order: 2;
+            z-index: 1;
+            position: relative;
+            &::after {
+                content: '';
+                background-image: url('../img/header-bg.png');
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                top: 0.5%;
+                right: 1.5%;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+            }
+        }
+        .herobox {
+            &__title {
+                color: $red;
+                font-size: 60px;
+                margin-bottom: 15px;
+            }
+
+            &__subtitle {
+                color: $white;
+                font-size: 30px;
+                line-height: 35px;
+                margin-bottom: 35px;
+            }
+            &-cta {
+                color: $white;
+                background-color: $red;
+                font-size: 20px;
+                padding: 20px 60px;
+                border: 0px;
+                border-radius: 5px;
+
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+.footer {
+    background-color: $light_dark;
+    &-wrapper {
+        display: flex;
+        height: 40vh;
+
+        color: $white;
+        flex-direction: row;
+        a {
+            color: $white;
+            text-decoration: none;
+        }
+        &__contacts {
+            display: flex;
+            margin: 50px;
+            flex-direction: column;
+            font-size: .8em;
+            line-height: 20px;
+        }
+        &__information {
+            display: flex;
+            margin: 50px;
+            flex-direction: column;
+            font-size: .8em;
+            line-height: 20px;
+        }
+        &__surbscribe {
+            display: flex;
+            margin: 50px;
+            flex-direction: column;
+            font-size: .8em;
+            line-height: 20px;
+            &__form__submit-email {
+                color: $black;
+                background-color: $white;
+            }
+        }
+        &__donate {
+            display: flex;
+            font-size: 2em;
+            margin: 100px;
+            height: 100px;
+            width: 300px;
+            background-color: $red;
+            align-items: center;
+            flex-direction: row;
+            border-radius: 10px;
+            &__click-to-donate {
+                font-size: .5em;
+                border-radius: 5px;
+                margin: 5px;
+            }
+            &__title {
+                margin: 5px;
+            }
+        }
+    }
+}

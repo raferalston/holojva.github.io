@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <section class="header-section">
@@ -31,8 +34,7 @@
             <h4 class="mini-games-wrapper__title">
                 Мини игры
             </h4>
-            <div class="container-carousel">
-                
+            <div class="container-carousel">  
                 <div class="container-carousel__card">
                     <div class="container-carousel__card__header">
                         <div class="container-carousel__card__header__image"></div>
@@ -212,32 +214,37 @@
     <section class="footer">
         <div class="footer-wrapper">
             <div class="footer-wrapper__contacts">
-                <h4 class="footer-wrapper__contacts__title">Контакты</h4>
-                <p class="footer-wrapper__contacts__phone-number">8-(925)-792-97-18</p>
-                <p class="footer-wrapper__contacts__email">holojva@gmail.com</p>
+                <h6 class="footer-wrapper__contacts__title">Контакты</h6>
+                <a href='tel:89257929718' class="footer-wrapper__contacts__phone-number">8-(925)-792-97-18</a>
+                <a href='mailto:holojva@gmail.com'class="footer-wrapper__contacts__email">holojva@gmail.com</a>
             </div>
             <div class="footer-wrapper__information">
-                <h4 class="footer-wrapper__information__title">Информация</h4>
-                <p class="footer-wrapper__information__about">О Kostya Sites</p>
-                <p class="footer-wrapper__information__work">Работа в Kostya sites</p>
-                <p class="footer-wrapper__information__privacy-policy">Политика Конфиденциальности</p>
-                <p class="footer-wrapper__information__terms-conditions">Условия и Положения</p>
-                <p class="footer-wrapper__information__press-inquiries">Запросы Прессы</p>
+                <h6 class="footer-wrapper__information__title">Информация</h6>
+                <a href='' class="footer-wrapper__information__about">О Kostya Sites</a>
+                <a href='' class="footer-wrapper__information__work">Работа в Kostya sites</a>
+                <a href='' class="footer-wrapper__information__privacy-policy">Политика Конфиденциальности</a>
+                <a href='' class="footer-wrapper__information__terms-conditions">Условия и Положения</a>
+                <a href='' class="footer-wrapper__information__press-inquiries">Запросы Прессы</a>
             </div>
            <div class="footer-wrapper__surbscribe">
-                <h4 class="footer-wrapper__surbscribe__title">Подписаться</h4>
-                <input type="text" class="footer-wrapper__surbscribe__email">
-                <submit class="footer-wrapper__surbscribe__submit-email">Подписаться</submit>
-                <div class="footer-wrapper__surbscribe__hint">  
+                <h6 class="footer-wrapper__surbscribe__title">Подписаться</h6>
+                <form class='footer-wrapper__surbscribe__form' action="">
+                    <input type="text" class="footer-wrapper__surbscribe__form__email">
+                    <input value='Подписаться'type='submit' class="footer-wrapper__surbscribe__form__submit-email">
+                </form>
+
+                <p class="footer-wrapper__surbscribe__hint">  
                     Тут еще можно поиграть в игры,
-                    заходить на мои ссылки, смотреть мои видео и
-                    поговорить с тем мужчиной сверху справа. 
+                    заходить на <br>мои ссылки, смотреть мои видео и
+                    поговорить <br>с тем мужчиной сверху справа. 
                     (Правда он искусственный)
-                </div>
+                </p>
            </div>
            <div class="footer-wrapper__donate">
-               <h2 class="footer-wrapper__donate__title">50 руб.</h2>
-               <button class="footer-wrapper__donate__click-to-donate">Мне на чай</button>
+            
+                <h6 class="footer-wrapper__donate__title">50 руб.</h6>
+                <input type='submit'value='Мне на чай' class="footer-wrapper__donate__click-to-donate">
+            
            </div>
         </div>
     </section>

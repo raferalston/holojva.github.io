@@ -1,0 +1,19 @@
+.container-carousel {
+    display: flex;
+    flex-direction: column;
+        &__card {
+        height: 400px;
+        width: 330px;
+        background-color: black;
+            &__header {
+                &__image {
+                    height: 330px;
+                    width: 330px;
+                    background-image: url('qwerty.ico');
+                }
+            }
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+}

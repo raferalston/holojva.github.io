@@ -1,0 +1,20 @@
+.games {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    background-color: $black;
+    &__canvas {
+        background-color: $white;
+        border-radius: 5px;
+   }
+   &__header {
+       font-size: 100px;
+       font-family: $pacifico;
+       color: $white;
+       margin: 0%;
+    }
+}

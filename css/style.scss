@@ -1,10 +1,21 @@
 @import './reset';
+@import './breakpoints';
 @import './colors';
 @import './text_setup';
 @import './header';
 @import './footer';
-@import './container-carousel';
+@import './container_carousel';
+// дальше игры и ютуб
+@import './section_games';
 .header-section-wrapper, .mini-games-wrapper, .links-wrapper, .youtube-wrapper, .footer-wrapper {
     max-width: 1360px;
     margin: auto;
+}
+html {
+    overflow-x: hidden;
+}
+img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }

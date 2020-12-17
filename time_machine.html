@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+<style>
+    #novis {
+        visibility: hidden;
+    }
+</style>
+</head>
+<body class='games'flex-direction="column">
+    <h1 style="color: white;
+    font-size: 3em;
+    margin:20px;">Машина ВРЕМЕНИ!</h1>
+    <input id="day" type="text" placeholder="ДЕНЬ"> 
+    <input id="month" type="text"placeholder="МЕСЯЦ">  
+    <input id="year" type="text"placeholder="ГОД">
+    <form action="https://www.google.com/search" method="GET" style="display: flex;   flex-direction: column;">
+        <input id="novis"type="text" name="q" height="1px" width="1px">
+        <button type="submit">ПОЕХАЛИ!</button>
+     </form> 
+     <script>
+         let day = document.querySelector('#day').value
+         let month = document.querySelector('#month').value
+         let year = document.querySelector('#year').value
+         let input = document.querySelector('#novis')
+         document.addEventListener('keyup', func)
+         function func() {
+        day = document.querySelector('#day').value
+        month = document.querySelector('#month').value
+        year = document.querySelector('#year').value
+            input.value = 'Что произошло ' + day + " " + month + " " + year
+        }
+ 
+         
+         
+     </script>
+</body>
+</html>

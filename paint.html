@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
     <style > canvas, body {
-        margin: 0%;
-        padding: 0%;
-        border: 10px solid black;
+       
+        border-top: 10px solid black;
     }</style>
 </head>
-<body>
+<body class='games'>
+    
+    <div style="flex-direction: column;">
     <button id='red'>red</button>
     <button id='orange'>orange</button>
     <button id="yellow">yellow</button>
@@ -21,9 +26,11 @@
     <button id="black">black</button>
     <button id="rubber">rubber</button>
     <button id="clear">clear</button>
-    <input id='input' type="text" value='напиши толщину рисовaлки'>
+    <input id='input' type="text" placeholder='напиши толщинy'>
+    </div>
     <button id="pixel">принять</button>
-    <canvas width="1920px" height="600px" id='canvas'></canvas>
+    
+    <canvas width="1440px" height="700px" id='canvas'></canvas>
     <script>
         let canvas = document.querySelector('#canvas')
         let x = 0
@@ -43,6 +50,7 @@
         let input = document.querySelector('#input')
         let button = document.querySelector('#pixel')
         let ctx = canvas.getContext("2d")
+
         canvas.addEventListener('mousedown', mouseDown)
         canvas.addEventListener('mouseup', mouseOtpuska)
         red.addEventListener('click', re)

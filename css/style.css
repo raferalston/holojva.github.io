@@ -835,6 +835,13 @@ p, button, input, span, a {
   background-color: #fff;
 }
 
+.mini-games-wrapper .container-carousel-wrapper__card__header__image img, .links-wrapper .container-carousel-wrapper__card__header__image img, .youtube-wrapper .container-carousel-wrapper__card__header__image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
 .mini-games-wrapper .container-carousel-wrapper__card__footer, .links-wrapper .container-carousel-wrapper__card__footer, .youtube-wrapper .container-carousel-wrapper__card__footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -880,6 +887,11 @@ p, button, input, span, a {
   margin-right: 25px;
 }
 
+.mini-games-wrapper .container-carousel-wrapper__card__footer__share-button a, .links-wrapper .container-carousel-wrapper__card__footer__share-button a, .youtube-wrapper .container-carousel-wrapper__card__footer__share-button a {
+  color: white;
+  text-decoration: none;
+}
+
 @media (max-width: 1366px) {
   .youtube {
     padding-bottom: 60px;
@@ -904,6 +916,7 @@ p, button, input, span, a {
       -ms-flex-align: center;
           align-items: center;
   background-color: #252525;
+  color: #fff;
 }
 
 .games__canvas {
@@ -916,6 +929,59 @@ p, button, input, span, a {
   font-family: "pacifico", fantasy, sans-serif;
   color: #fff;
   margin: 0%;
+}
+
+.about {
+  background-color: #252525;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.about h1 {
+  font-size: 3em;
+  margin: 30px;
+}
+
+.about p, .about a {
+  width: 500px;
+  line-height: 25px;
+  color: white;
+  text-decoration: none;
+}
+
+.privacy {
+  background-color: #252525;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.privacy h1 {
+  font-size: 3em;
+  margin: 30px;
+}
+
+.privacy p, .privacy a {
+  line-height: 25px;
+  color: white;
+  text-decoration: none;
 }
 
 .header-section-wrapper, .mini-games-wrapper, .links-wrapper, .youtube-wrapper, .footer-wrapper {

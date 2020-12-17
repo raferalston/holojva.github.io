@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    
+</head>
+<body>
+    <section class="games">
+    <h1 class="games__header">Змейка</h1>
+    <canvas class='games__canvas' id='canvas' width='600' height='600'>
+            
+</canvas>
+    </section>    
+    <script>
+        let canvas = document.querySelector('#canvas');
+        let ctx = canvas.getContext('2d');
+        let canvasWidth = canvas.clientWidth;
+        let canvasHeight = canvas.clientHeight;
+        let size = canvasWidth / 20;
+        
+        let Snake  = function() {
+            this.size = size;
+            this.color = 'green'
+            this.x = 0
+            this.y = 0 
+            this.speed = this.size
+            this.speedX = this.size
+            this.speedY = 0
+            this.tail = [[0, 0]]
+            this.show = function() {
+                ctx.fillStyle = this.color;
+                for (let i = 0; i < this.tail.length; i++) {
+                    const el = this.tail[i];
+                    ctx.fillRect(el[0], el[1], this.size, this.size);
+                }
+           
+            
+            }
+            this.update = function() {
+                this.x += this.speedX
+                this.y += this.speedY
+                // for (let i = 0; i < this.tail.length - 1; i++) {
+                //     this.tail[i] = this.tail[i+1]
+                // }
+                // this.tail[this.tail.length - 1] = [this.x, this.y]
+                this.tail.shift()
+                this.tail.push([this.x, this.y])
+                for (let i = 0; i < this.tail.length - 1; i++) {
+                    this.snakeCollision(this.tail[i])
+                }
+                
+            }
+            
+            this.move = function(direction) {
+                if (direction === 97 && this.speedX <= 0) {
+                    this.speedX = this.speed * -1
+                    this.speedY = 0
+                }
+                else if (direction === 115 && this.speedY >= 0) {
+                    this.speedX = 0
+                    this.speedY = this.speed;
+                } 
+                else if (direction === 100 && this.speedX >= 0) {
+                    this.speedX = this.speed;
+                    this.speedY = 0
+                } 
+                else if (direction === 119 && this.speedY <= 0 ) {
+                    this.speedX = 0
+                    this.speedY = this.speed * -1
+                } 
+            }
+            this.wallCollision = function() {
+        
+                return (this.x + this.size > canvasWidth) || (this.x < 0)
+                || (this.y < 0) || (this.y + this.size > canvasHeight)
+               
+            }
+            this.eat = function(food) {
+                 return food.x == this.x && food.y == this.y
+            
+            }
+            this.grow = function() {
+                this.tail.push([this.x, this.y])
+            }
+            this.getLength = function() {
+                return this.tail.length
+            }
+            this.gameOver = function() {
+                ctx.fillStyle = 'black'
+                ctx.font = '90px Arial'
+                ctx.textAlign = 'center'
+                ctx.Baseline = 'middle'
+                ctx.fillText('You lose!', canvasWidth/2, canvasHeight/2)
+                clearInterval(gameLoop)
+            }
+            this.snakeCollision = function(tail) {
+                if (tail[0] === this.x && tail[1] === this.y) {
+                    this.gameOver()
+                }
+            }
+        }
+        let Food = function() {
+            this.x = null;
+            this.y = null;
+            this.color = 'red'
+            this.size = size;
+            this.show = function() {
+                ctx.fillStyle = this.color;
+                ctx.fillRect(this.x, this.y, this.size, this.size)
+            }
+        this.getRandomSpot = function() {
+            return Math.floor((Math.random() * size / 2)) * size
+        }        
+        this.pickLocation = function() {
+            this.x = this.getRandomSpot();
+            this.y = this.getRandomSpot();
+        }
+        }
+        let Score = function() {
+            this.score = 0
+            this.show = function() {
+                ctx.fillStyle = 'blue'
+                ctx.textAlign = 'center'
+                ctx.textBaseline = 'middle'
+                }
+            this.update = function(score) {
+                this.score = score
+            }
+        }
+        let gameLoop = setInterval(game, 150)
+        let s = new Snake()
+        let f = new Food()
+        let score = new Score()
+        f.pickLocation()
+        document.addEventListener('keypress', keyPressEvent)
+
+        function keyPressEvent(event) {
+            s.move(event.keyCode);
+        }
+        function game() {
+            ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight)
+            
+            s.show()
+            f.show()
+            score.show()
+            s.update()
+            score.update(s.getLength())
+            if  (s.wallCollision()) {
+                console.log('бах!');
+                s.gameOver()
+            }
+            if (s.eat(f)) {
+                s.grow()
+                f.pickLocation();
+            }
+        }
+
+    </script>
+</body>
+</html>

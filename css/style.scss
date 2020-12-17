@@ -7,15 +7,12 @@
 @import './container_carousel';
 // дальше игры и ютуб
 @import './section_games';
+// и страничка "о нас"
+@import './info';
 .header-section-wrapper, .mini-games-wrapper, .links-wrapper, .youtube-wrapper, .footer-wrapper {
     max-width: 1360px;
     margin: auto;
 }
 html {
     overflow-x: hidden;
-}
-img {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }

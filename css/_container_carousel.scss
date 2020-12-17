@@ -98,6 +98,11 @@
                         &__image {
                             height: 330px;
                             background-color: $white;
+                                img {
+                                    object-fit: cover;
+                                    height: 100%;
+                                    width: 100%;
+                                }
                             }
                     }
                 
@@ -139,6 +144,10 @@
                             font-size: 15px;
                             color: $white;
                             margin-right: 25px;
+                            a {
+                                color: white;
+                                text-decoration: none;
+                            }
                         }
                     }
                 }

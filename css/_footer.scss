@@ -5,30 +5,46 @@
         justify-content: center;
         align-items: flex-start;
         padding: 80px 0;
-        @include media('<=desktop') {
+        @include media('<=tablet') {
             
+            flex-direction: column;
         }
         &-left {
             display: flex;
-
+            @include media('<=tablet') {
+                flex-direction: column;
+                justify-content: center;
+                order: 1;
+            }
             &__contacts {
                 margin-right: 150px;
+                @include media('<=tablet') {
+                    margin-right: 0%;
+                }
             }
         
             &__information {
                 margin-right: 60px;
+                @include media('<=tablet') {
+                    margin-right: 0%;
+                }
             }
     
             &__contacts, &__information {
                 display: flex;
                 flex-direction: column;
-    
+                @include media('<=tablet') {
+                    align-items: center;
+                    text-align: center;
+                    margin-bottom: 50px;
+                }
                 &__title {
                     font-family: $roboto-slab;
                     font-size: 10px;
                     color: $white;
                     font-weight: normal;
                     margin-bottom: 24px;
+                 
                 }
     
                 & > a {
@@ -45,7 +61,11 @@
             &__surbscribe {
                 display: flex;
                 flex-direction: column;
-    
+                @include media('<=tablet') {
+                    align-items: center;
+                    text-align: center;
+                    margin-bottom: 50px;
+                }
                 &__title {
                     font-family: $arial;
                     font-size: 14px;
@@ -96,7 +116,10 @@
             }
         }
         &-right {
-
+            @include media('<=tablet') {
+                align-items: center;
+                order: 2;
+            }
             &__donate {
                 display: flex;
                 justify-content: center;

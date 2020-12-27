@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+        img {
+            object-fit: contain;
+            width: 800px;
+        }
+        </style>
+    </head>
+    <body>
+        <img src="photo_low.jpg" alt="" srcset="" height="400">
+
+
+        <script>
+        window.onload = function changeImage() {
+        let image = document.querySelector('img');
+        image.src = 'photo_high.jpg'
+        }
+        </script>
+    </body>
+</html>
+

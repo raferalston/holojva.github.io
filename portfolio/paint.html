@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style > canvas, body {
+       
+        border-top: 10px solid black;
+    }</style>
+</head>
+<body class='games'>
+    
+    <div style="flex-direction: column;">
+    <button id='red'>red</button>
+    <button id='orange'>orange</button>
+    <button id="yellow">yellow</button>
+    <button id="green">green</button>
+    <button id="skyblue">skyblue</button>
+    <button id="blue">blue</button>
+    <button id="purple">purple</button>
+    <button id="black">black</button>
+    <button id="rubber">rubber</button>
+    <button id="clear">clear</button>
+    <input id='input' type="text" placeholder='напиши толщинy'>
+    </div>
+    <button id="pixel">принять</button>
+    
+    <canvas width="1440px" height="700px" id='canvas'></canvas>
+    <script>
+        let canvas = document.querySelector('#canvas')
+        let x = 0
+        let y = 0 
+        let h = 10
+        let w = 10
+        let color = 'black'
+        let red = document.querySelector('#red')
+        let green = document.querySelector('#green')
+        let blue = document.querySelector('#blue')
+        let orange = document.querySelector('#orange')
+        let yellow = document.querySelector('#yellow')
+        let skyblue = document.querySelector('#skyblue')
+        let purple = document.querySelector('#purple')
+        let black = document.querySelector('#black')
+        let rubber = document.querySelector('#rubber')
+        let input = document.querySelector('#input')
+        let button = document.querySelector('#pixel')
+        let ctx = canvas.getContext("2d")
+
+        canvas.addEventListener('mousedown', mouseDown)
+        canvas.addEventListener('mouseup', mouseOtpuska)
+        red.addEventListener('click', re)
+        green.addEventListener('click', gree)
+        blue.addEventListener('click', blu)
+        orange.addEventListener('click', orang)
+        yellow.addEventListener('click', yello)
+        skyblue.addEventListener('click', skyblu)
+        purple.addEventListener('click', purpl)
+        rubber.addEventListener('click', rubbe)
+        black.addEventListener('click', blac)
+        button.addEventListener('click', knopka)
+        let clear = document.querySelector('#clear')
+        clear.addEventListener('click', clea)
+        
+        function knopka() {
+            let i = Number(input.value)
+            h = i
+            w = i
+        }
+        function mouseDown() {
+            canvas.addEventListener('mousemove', mousemovKA);
+            console.log('1')
+        }
+        function clea() {
+            color = ctx.fillStyle
+            ctx.fillStyle = 'white'
+            ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight)
+            ctx.fillStyle = color
+        }
+        function mousemovKA(event) {
+            x = event.offsetX
+            y = event.offsetY
+            ctx.fillRect(x, y, h, w)
+        
+            console.log('2')
+                    
+        }
+        function mouseOtpuska() {
+           canvas.removeEventListener('mousemove', mousemovKA)
+        }
+        function re() {
+            ctx.fillStyle = 'red'
+        }
+        function gree() {
+            ctx.fillStyle = 'green'
+            
+        }
+        function blu() {
+            ctx.fillStyle = 'blue'
+        }
+        function orang() {
+            ctx.fillStyle = 'orange'
+        }
+        function yello() {
+            ctx.fillStyle = 'yellow'
+        }
+        function skyblu() {
+            ctx.fillStyle = 'skyblue'
+        }
+        function purpl() {
+            ctx.fillStyle = 'purple'
+        }
+        function rubbe() {
+            ctx.fillStyle = 'white' 
+        }
+        function blac() {
+            ctx.fillStyle = 'black'
+        }
+    </script>
+</body>
+</html>

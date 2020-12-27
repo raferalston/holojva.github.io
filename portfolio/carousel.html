@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carousel</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #0e153a;
+        overflow: hidden;
+    }
+    .carousel {
+        width: 100%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+       
+    }
+    .wrapper {
+        display: flex;
+        position: relative;
+        transition: all ease .35s;
+    }
+    
+    
+    .body {
+        padding: 0 1em 1em 1em;
+        font-size: 1.25em;
+        text-align: center;
+    }
+    .next {
+        border-bottom: 5px solid #fc5c9c;
+        border-right: 5px solid #fc5c9c;
+        width: 40px;
+        height: 40px;
+        transform: rotate(-45deg);
+        margin-top: 20px;
+        cursor: pointer;
+    }
+    .rev {
+        border-bottom: 5px solid #fc5c9c;
+        border-right: 5px solid #fc5c9c;
+        width: 40px;
+        height: 40px;
+        transform: rotate(135deg);
+        margin-top: 20px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="rev"></div>
+        <div class="wrapper">
+            
+            <div class="card">
+                <div class="title">Hello world</div>
+                <div class="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam omnis laudantium praesentium eum, fugit suscipit tenetur vitae delectus autem repudiandae sint consequatur. Nostrum praesentium delectus aliquid iure inventore, consequatur doloribus?</div>
+            </div>
+            <div class="card">
+                <div class="title">Hello world</div>
+                <div class="body">Similique, vitae veritatis. Qui dolores velit fugiat dolore odio beatae temporibus. Repellendus deserunt veniam voluptas autem laudantium ab, tempore nobis iusto laboriosam numquam architecto dignissimos magnam nesciunt accusamus eveniet cupiditate?</div>
+            </div>
+            <div class="card">
+                <div class="title">Hello world</div>
+                <div class="body">Optio soluta sint fugiat, eos unde dicta doloribus adipisci modi quasi aliquid amet odio veritatis iusto recusandae porro voluptate asperiores ducimus aliquam mollitia! Ipsa officia, alias quam eius magnam reiciendis!</div>
+            </div>
+            <div class="card">
+                <div class="title">Hello world</div>
+                <div class="body">Facere, neque ut sit doloribus libero quia quam aliquam itaque nemo repudiandae. Animi similique eius nisi voluptatem, eaque dolorem delectus at impedit reprehenderit laborum natus quo inventore, aperiam non esse.</div>
+            </div>
+        </div>
+        <div class="next"></div>
+        <div class="rev"></div>
+    </div>
+    <script>
+        let carousel = document.querySelector('.wrapper')
+        let nextButton = document.querySelector('.next')
+        let revButton = document.querySelector('.rev')
+        let pos = 0;
+
+        nextButton.addEventListener('click', right)
+        revButton.addEventListener('click', left)
+        carousel.style.right = 0 + 'px'
+        function right() {
+            pos += 225
+            carousel.style.right = pos + 'px'
+        }
+        function left() {
+            pos -= 225
+            carousel.style.right = pos + 'px'
+        }
+
+    </script>
+</body>
+</html>

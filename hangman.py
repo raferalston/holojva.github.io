@@ -1,13 +1,13 @@
-def create_down_things(a) :
-    for i in list(a) :
+def create_down_things(a, b) :
+    for i in list(b) :
         a += "_"
         i = i
-    b = "".join(a) 
+    c = "".join(a) 
     return a
 
 otvet = "виселица"
 ne_otvet = []
-p_otvet = create_down_things(ne_otvet)
+p_otvet = create_down_things(ne_otvet, otvet)
  
 print(f"Это игра про виселицу, тут надо писать буквы, у вас 3 неправильных попытки, слово из {len(otvet)}. " )
 popytky = 3

@@ -1,0 +1,1 @@
+print("This benchmark using 'pass')

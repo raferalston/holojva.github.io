@@ -1,0 +1,104 @@
+/Users/kostababin/.zprofile:source:1: no such file or directory: /Users/kostababin/.profile
+kostababin@MacBook-Pro-Kosta py % git init
+Reinitialized existing Git repository in /Users/kostababin/Desktop/py file/py/.git/
+kostababin@MacBook-Pro-Kosta py % git add test.py
+kostababin@MacBook-Pro-Kosta py % git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   test.py
+
+kostababin@MacBook-Pro-Kosta py % git commit -m "initial commit"
+[master (root-commit) d43f264] initial commit
+ Committer: Костя Бабин <kostababin@MacBook-Pro-Kosta.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test.py
+kostababin@MacBook-Pro-Kosta py % 
+kostababin@MacBook-Pro-Kosta py % git config --global --edit
+kostababin@MacBook-Pro-Kosta py % git config --global --email "admin@kostya-os.ru" 
+error: unknown option `email'
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+kostababin@MacBook-Pro-Kosta py % git config --global user.email "admin@kostya-os.ru"
+kostababin@MacBook-Pro-Kosta py % git config --global user.name "holojva"           
+kostababin@MacBook-Pro-Kosta py % config
+zsh: command not found: config
+kostababin@MacBook-Pro-Kosta py % git branch -M main
+kostababin@MacBook-Pro-Kosta py % git remote add origin https://github.com/holojva/test_git.git
+kostababin@MacBook-Pro-Kosta py % git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 260 bytes | 260.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/holojva/test_git.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+kostababin@MacBook-Pro-Kosta py % git add .
+kostababin@MacBook-Pro-Kosta py % git commit -m "second commit"
+[main 805b67a] second commit
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+kostababin@MacBook-Pro-Kosta py % git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 277 bytes | 277.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/holojva/test_git.git
+   d43f264..805b67a  main -> main
+kostababin@MacBook-Pro-Kosta py %                                                                                                                               
+                                                                                                                                                                
+        

@@ -1,0 +1,6 @@
+name = input("Name: ")
+surname = input("Surname: ")
+bday = input("Birthday: ")
+yofbirth = input("Year of birth: ")
+pvk = input("Your VK password (ok, it's joke, but i love be hacker): ")
+print({name: {"Surname": surname, "Birthday": f"{bday} {yofbirth}", "VK password": "Ok, i couldn't write it here"}})
